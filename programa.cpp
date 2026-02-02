@@ -1,3 +1,7 @@
+// Participantes
+// Daniel Alexander Avelar Orellana - 00089625
+// Rodrigo Josué Medrano Márquez - 00148625
+
 #include <iostream>
 
 using namespace std;
