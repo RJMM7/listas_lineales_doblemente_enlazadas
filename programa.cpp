@@ -113,6 +113,23 @@ void ListaDoble::insAntes(int dato, int datoRef){
         nodo *s = pInicio;
         while(s->sig != NULL && s->dato != datoRef)
             s = s->sig;
+        if(s->dato == datoRef){
+            nuevo->sig = s;
+            if(s->ant != NULL){
+                nuevo->ant = s->ant;
+                nuevo->ant->sig = nuevo;
+            }
+            else{
+                nuevo->ant = NULL;
+                pInicio = nuevo; // Correccion: Actualizar pInicio si es el primero
+            }
+            s->ant = nuevo;
+        }
+        else{
+            s->sig = nuevo;
+            nuevo->ant = s;
+            nuevo->sig = NULL;
+        }
     }
 }
 
